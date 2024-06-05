@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Participación</title>
+</head>
+<body>
+    <h1>Agregar Participación</h1>
+    <form method="POST">
+        <label for="id_usuario">Usuario:</label>
+        <select id="id_usuario" name="id_usuario">
+            {% for usuario in usuarios %}
+            <option value="{{ usuario[0] }}">{{ usuario[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="id_evento">Evento:</label>
+        <select id="id_evento" name="id_evento">
+            {% for evento in eventos %}
+            <option value="{{ evento[0] }}">{{ evento[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="rol">Rol:</label>
+        <input type="text" id="rol" name="rol"><br>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

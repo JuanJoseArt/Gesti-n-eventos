@@ -1,0 +1,75 @@
+Claro, aquí tienes un ejemplo de un README para tu aplicación y cómo ejecutarla:
+
+---
+
+# Sistema de Gestión de Eventos
+
+Este es un sistema de gestión de eventos desarrollado utilizando Flask y MySQL. Permite gestionar eventos, usuarios y participaciones en los eventos.
+
+## Requisitos
+
+- Python 3.x
+- Flask
+- Flask-MySQLdb
+- MySQL Server
+
+## Instalación
+
+1. Clona este repositorio en tu máquina local:
+
+    ```
+    git clone https://github.com/tu_usuario/sistema-gestion-eventos.git
+    ```
+
+2. Instala las dependencias utilizando pip:
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+3. Configura la base de datos MySQL:
+
+    - Crea una base de datos llamada `gestion_eventos`.
+    - Ejecuta el script `database.sql` para crear las tablas necesarias.
+
+4. Configura la conexión a la base de datos en el archivo `app.py`:
+
+    ```python
+    app.config['MYSQL_HOST'] = 'localhost'
+    app.config['MYSQL_USER'] = 'tu_usuario_mysql'
+    app.config['MYSQL_PASSWORD'] = 'tu_contraseña_mysql'
+    app.config['MYSQL_DB'] = 'gestion_eventos'
+    ```
+
+## Ejecución
+
+1. Ejecuta la aplicación Flask:
+
+    ```
+    python app.py
+    ```
+
+2. Abre tu navegador web y ve a la dirección `http://localhost:5000` para acceder al sistema.
+
+## Uso
+
+- La página principal muestra una lista de todos los eventos disponibles.
+- Puedes agregar, editar o eliminar eventos desde la página principal.
+- La página de consultas de usuarios muestra una lista de todos los usuarios registrados.
+- Puedes agregar, editar o eliminar usuarios desde la página de consultas de usuarios.
+- La página de participaciones muestra una lista de todas las participaciones en los eventos.
+- Puedes agregar o editar participaciones desde la página de participaciones.
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Si encuentras algún error o tienes alguna mejora, no dudes en enviar un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+Este README proporciona una guía básica sobre cómo instalar, ejecutar y utilizar la aplicación. Puedes personalizarlo según tus necesidades específicas y agregar más detalles sobre la arquitectura de la aplicación, características adicionales, etc.
+
+Espero que esto te ayude a empezar con tu aplicación. ¡Buena suerte!

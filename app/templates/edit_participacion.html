@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Participación</title>
+</head>
+<body>
+    <h1>Editar Participación</h1>
+    <form method="POST">
+        <label for="id_usuario">Usuario:</label>
+        <select id="id_usuario" name="id_usuario">
+            {% for usuario in usuarios %}
+            <option value="{{ usuario[0] }}" {% if usuario[0] == participacion[1] %}selected{% endif %}>{{ usuario[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="id_evento">Evento:</label>
+        <select id="id_evento" name="id_evento">
+            {% for evento in eventos %}
+            <option value="{{ evento[0] }}" {% if evento[0] == participacion[2] %}selected{% endif %}>{{ evento[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="rol">Rol:</label>
+        <input type="text" id="rol" name="rol" value="{{ participacion[3] }}"><br>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>
