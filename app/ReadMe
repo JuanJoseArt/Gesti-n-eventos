@@ -18,7 +18,7 @@ Este es un sistema de gestión de eventos desarrollado utilizando Flask y MySQL.
 1. Clona este repositorio en tu máquina local:
 
     ```
-    git clone https://github.com/tu_usuario/sistema-gestion-eventos.git
+    git clone https://github.com/JuanJoseArt/Gesti-n-eventos.git
     ```
 
 2. Instala las dependencias utilizando pip:
