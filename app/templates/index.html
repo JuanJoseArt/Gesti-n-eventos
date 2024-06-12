@@ -3,34 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Eventos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Eventos</h1>
-    <a href="{{ url_for('add_evento') }}">Agregar Evento</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Fecha</th>
-            <th>Ubicación</th>
-            <th>Acciones</th>
-        </tr>
-        {% for evento in eventos %}
-        <tr>
-            <td>{{ evento[0] }}</td>
-            <td>{{ evento[1] }}</td>
-            <td>{{ evento[2] }}</td>
-            <td>{{ evento[3] }}</td>
-            <td>{{ evento[4] }}</td>
-            <td>
-                <a href="{{ url_for('edit_evento', id=evento[0]) }}">Editar</a>
-                <form action="{{ url_for('delete_evento', id=evento[0]) }}" method="post" style="display:inline;">
-                    <button type="submit">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1 class="text-center">Lista de Eventos</h1>
+        <a href="{{ url_for('add_evento') }}" class="btn btn-primary mb-3">Agregar Evento</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                    <th>Ubicación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evento in eventos %}
+                <tr>
+                    <td>{{ evento[0] }}</td>
+                    <td>{{ evento[1] }}</td>
+                    <td>{{ evento[2] }}</td>
+                    <td>{{ evento[3] }}</td>
+                    <td>{{ evento[4] }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_evento', id=evento[0]) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('delete_evento', id=evento[0]) }}" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
